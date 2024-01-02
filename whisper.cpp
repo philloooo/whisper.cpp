@@ -2147,8 +2147,9 @@ static bool whisper_encode_internal(
 
         ggml_graph_compute_helper(wstate.backend, gf, n_threads);
     }
-
-    wstate.t_encode_us += ggml_time_us() - t_start_us;
+    auto delta =  ggml_time_us() - t_start_us;
+    WHISPER_LOG_INFO("%s:   encode step time = %8.2f ms \n", __func__, 1e-3f * delta);
+    wstate.t_encode_us += delta;
     wstate.n_encode++;
 
     return !(abort_callback && abort_callback(abort_callback_data));

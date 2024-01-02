@@ -79,3 +79,94 @@ metal:
 {'CPU': 106.48, 'GPU': 82.38, 'ANE': 5.28}
 
 
+
+
+ane optimized model, librispeech
+
+whisper_print_timings:     load time =    75.82 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =   678.18 ms
+whisper_print_timings:   sample time =  6705.76 ms / 34428 runs (    0.19 ms per run)
+whisper_print_timings:   encode time =  1202.35 ms /    83 runs (   14.49 ms per run)
+whisper_print_timings:   decode time =   437.96 ms /   289 runs (    1.52 ms per run)
+whisper_print_timings:   batchd time = 18773.79 ms / 33727 runs (    0.56 ms per run)
+whisper_print_timings:   prompt time =   624.52 ms / 18606 runs (    0.03 ms per run)
+whisper_print_timings:    total time = 28603.50 ms
+ggml_metal_free: deallocating
+
+tiny, vanila
+whisper_print_timings:     load time =    81.96 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =   675.12 ms
+whisper_print_timings:   sample time =  6648.48 ms / 34398 runs (    0.19 ms per run)
+whisper_print_timings:   encode time =  1544.40 ms /    78 runs (   19.80 ms per run)
+whisper_print_timings:   decode time =   515.70 ms /   338 runs (    1.53 ms per run)
+whisper_print_timings:   batchd time = 18790.50 ms / 33673 runs (    0.56 ms per run)
+whisper_print_timings:   prompt time =   597.11 ms / 17466 runs (    0.03 ms per run)
+whisper_print_timings:    total time = 29782.68 ms
+ggml_metal_free: deallocating
+ggml_metal_free: deallocating
+
+small, vanila
+whisper_print_timings:     load time =   178.84 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =   676.68 ms
+whisper_print_timings:   sample time =  7431.15 ms / 37270 runs (    0.20 ms per run)
+whisper_print_timings:   encode time =  9291.69 ms /    67 runs (  138.68 ms per run)
+whisper_print_timings:   decode time =   328.96 ms /    56 runs (    5.87 ms per run)
+whisper_print_timings:   batchd time = 67911.59 ms / 36882 runs (    1.84 ms per run)
+whisper_print_timings:   prompt time =  2327.90 ms / 14942 runs (    0.16 ms per run)
+whisper_print_timings:    total time = 92422.41 ms
+ggml_metal_free: deallocating
+
+
+small ane:
+whisper_print_timings:     load time =   187.74 ms
+whisper_print_timings:     fallbacks =   0 p /   0 h
+whisper_print_timings:      mel time =   673.28 ms
+whisper_print_timings:   sample time =  7126.61 ms / 37215 runs (    0.19 ms per run)
+whisper_print_timings:   encode time =  6497.44 ms /    67 runs (   96.98 ms per run)
+whisper_print_timings:   decode time =   646.35 ms /   109 runs (    5.93 ms per run)
+whisper_print_timings:   batchd time = 68333.89 ms / 36777 runs (    1.86 ms per run)
+whisper_print_timings:   prompt time =  2363.84 ms / 14714 runs (    0.16 ms per run)
+whisper_print_timings:    total time = 91419.48 ms
+
+metal
+Ran model=tiny threads=2 processor_count=1, took 244.41ms
+Ran model=tiny threads=2 processor_count=2, took 218.81ms
+Ran model=tiny threads=4 processor_count=1, took 209.13ms
+Ran model=tiny threads=4 processor_count=2, took 214.33ms
+Ran model=tiny threads=8 processor_count=1, took 193.91ms
+Ran model=tiny threads=8 processor_count=2, took 216.95ms
+Ran model=base threads=2 processor_count=1, took 307.1ms
+Ran model=base threads=2 processor_count=2, took 337.52ms
+Ran model=base threads=4 processor_count=1, took 306.41ms
+Ran model=base threads=4 processor_count=2, took 330.76ms
+Ran model=base threads=8 processor_count=1, took 289.83ms
+Ran model=base threads=8 processor_count=2, took 330.94ms
+Ran model=small threads=2 processor_count=1, took 678.43ms
+Ran model=small threads=2 processor_count=2, took 872.47ms
+Ran model=small threads=4 processor_count=1, took 655.0ms
+Ran model=small threads=4 processor_count=2, took 861.04ms
+Ran model=small threads=8 processor_count=1, took 642.49ms
+Ran model=small threads=8 processor_count=2, took 860.35ms
+
+ANE 
+Ran model=tiny threads=2 processor_count=1, took 304.46ms
+Ran model=tiny threads=2 processor_count=2, took 281.46ms
+Ran model=tiny threads=4 processor_count=1, took 264.08ms
+Ran model=tiny threads=4 processor_count=2, took 277.05ms
+Ran model=tiny threads=8 processor_count=1, took 259.3ms
+Ran model=tiny threads=8 processor_count=2, took 262.2ms
+Ran model=base threads=2 processor_count=1, took 356.03ms
+Ran model=base threads=2 processor_count=2, took 376.57ms
+Ran model=base threads=4 processor_count=1, took 333.29ms
+Ran model=base threads=4 processor_count=2, took 361.36ms
+Ran model=base threads=8 processor_count=1, took 330.84ms
+Ran model=base threads=8 processor_count=2, took 360.94ms
+Ran model=small threads=2 processor_count=1, took 707.84ms
+Ran model=small threads=2 processor_count=2, took 827.47ms
+Ran model=small threads=4 processor_count=1, took 712.63ms
+Ran model=small threads=4 processor_count=2, took 799.38ms
+Ran model=small threads=8 processor_count=1, took 677.99ms
+Ran model=small threads=8 processor_count=2, took 807.16ms
